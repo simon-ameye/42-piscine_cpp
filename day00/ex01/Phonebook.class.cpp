@@ -6,7 +6,7 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 16:49:40 by sameye            #+#    #+#             */
-/*   Updated: 2022/01/15 02:03:54 by sameye           ###   ########.fr       */
+/*   Updated: 2022/01/15 16:58:16 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	Phonebook::add_contact(void)
 {
 	std::string	input;
 
-	std::cout << "---------CONTACT CREATOR---------" << std::endl;
+	std::cout << "\n---------CONTACT CREATOR---------" << std::endl;
 	if (_contact_nb == MAX_CONTACTS)
 	{
 		std::cout << "Phonebook full !" << std::endl;
@@ -55,10 +55,10 @@ void	Phonebook::search(void)
 	int			index;
 	std::string	input;
 
-	std::cout << "---------SEARCH TOOL---------" << std::endl;
+	std::cout << "\n---------SEARCH TOOL---------" << std::endl;
 	if (_contact_nb == 0)
 	{
-		std::cout << "No contact to show";
+		std::cout << "No contact to show\n";
 		return ;
 	}
 	_show_phonebook();

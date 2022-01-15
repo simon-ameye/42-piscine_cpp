@@ -6,25 +6,11 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 16:27:27 by sameye            #+#    #+#             */
-/*   Updated: 2022/01/15 02:28:06 by sameye           ###   ########.fr       */
+/*   Updated: 2022/01/15 17:06:24 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Phonebook.class.hpp"
-
-static void	remove_string(std::string input)
-{
-	std::string::size_type i;
-
-	i = 0;
-	while (i < input.length())
-	{
-		std::cout<<'\b';
-		std::cout<<" ";
-		std::cout<<'\b';
-		i++;
-	}
-}
 
 int	main(void)
 {
@@ -33,6 +19,7 @@ int	main(void)
 
 	while (1)
 	{
+		std::cout << "\n---------MAIN MENU---------" << std::endl;
 		std::cout << "Please enter ADD, SEARCH or EXIT : ";
 		getline(std::cin, input, '\n');
 		if (input == "ADD")
@@ -42,7 +29,7 @@ int	main(void)
 		else if (input == "EXIT")
 			return 0;
 		else
-			remove_string(input);
+			std::cout << "Wrong command" << std::endl;
 	}
 	return (0);
 }
