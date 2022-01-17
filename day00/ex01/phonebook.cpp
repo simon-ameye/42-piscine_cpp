@@ -6,7 +6,7 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 16:27:27 by sameye            #+#    #+#             */
-/*   Updated: 2022/01/15 17:06:24 by sameye           ###   ########.fr       */
+/*   Updated: 2022/01/17 12:27:06 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,3 @@ int	main(void)
 	}
 	return (0);
 }
-
-/*
-TODO : 
-contacts disponibles non vides
-Toute autre entrée est supprimée.
-*/
