@@ -6,7 +6,7 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 19:31:54 by sameye            #+#    #+#             */
-/*   Updated: 2022/01/19 21:05:41 by sameye           ###   ########.fr       */
+/*   Updated: 2022/01/20 13:48:32 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ class HumanB
 	public:
 		HumanB(std::string name);
 		~HumanB(void);
-		void	setWeapon(Weapon);
+		void	setWeapon(Weapon &weapon);
 		void	attack(void);
 	private:
-		Weapon weapon;
+		Weapon *_weapon;
 		std::string name;
 };
 
