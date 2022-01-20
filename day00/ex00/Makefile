@@ -6,7 +6,7 @@
 #    By: sameye <sameye@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/14 13:02:07 by sameye            #+#    #+#              #
-#    Updated: 2022/01/17 12:50:02 by sameye           ###   ########.fr        #
+#    Updated: 2022/01/17 17:50:12 by sameye           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,18 +21,16 @@ CXXFLAGS := -Wall -Werror -Wextra
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@$(CXX) $(OBJS) -o $@
+	$(CXX) $(OBJS) -o $@
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -o $@ -c $<
 
 clean:
-	@rm -f $(OBJS)
-	@echo "[INFO] Objects removed!"
+	rm -f $(OBJS)
 
 fclean: clean
-	@rm -f $(NAME)
-	@echo "[INFO] $(NAME) removed!"
+	rm -f $(NAME)
 
 re:	fclean all
 

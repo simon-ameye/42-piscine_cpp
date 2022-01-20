@@ -6,13 +6,13 @@
 #    By: sameye <sameye@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/14 13:02:07 by sameye            #+#    #+#              #
-#    Updated: 2022/01/17 17:50:06 by sameye           ###   ########.fr        #
+#    Updated: 2022/01/19 11:55:02 by sameye           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	:= Zombie
 
-SRCS	:= Zombie.cpp main.cpp
+SRCS	:= Zombie.cpp main.cpp newZombie.cpp randomChump.cpp
 OBJS	:= $(SRCS:.cpp=.o)
 
 CXX	:= clang++
