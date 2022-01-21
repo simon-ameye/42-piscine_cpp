@@ -6,7 +6,7 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 17:15:57 by sameye            #+#    #+#             */
-/*   Updated: 2022/01/20 17:19:43 by sameye           ###   ########.fr       */
+/*   Updated: 2022/01/21 12:54:25 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class	Karen
 		void	warning(void);
 		void	error(void);
 		std::string _level[4];
-		void	(Karen::*dispatch[4])(void);
+		void	(Karen::*fnct_ptrs[4])(void);
 };
 
 #endif
