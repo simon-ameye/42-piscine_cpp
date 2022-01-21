@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Karen.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/20 17:15:57 by sameye            #+#    #+#             */
-/*   Updated: 2022/01/21 14:58:39 by sameye           ###   ########.fr       */
+/*   Created: 2022/01/20 17:15:53 by sameye            #+#    #+#             */
+/*   Updated: 2022/01/21 13:47:19 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+# include "Karen.hpp"
 
-# ifndef KAREN_HPP
-# define KAREN_HPP
-# include <iostream>
-
-class	Karen
+int		main(int ac, char **av)
 {
-	public:
-				Karen(void);
-				~Karen(void);
-		void	complain(std::string level);
-		
-	private:
-		void		debug(void);
-		void		info(void);
-		void		warning(void);
-		void		error(void);
-		std::string _level[4];
-		void		(Karen::*fnct_ptrs[4])(void);
-};
+	Karen karen;
 
-#endif
+	if (ac != 2 || !av[1])
+		return (0);
+	karen.complain(av[1]);
+	return (0);
+}
