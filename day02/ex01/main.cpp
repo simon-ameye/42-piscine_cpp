@@ -6,7 +6,7 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 18:37:09 by sameye            #+#    #+#             */
-/*   Updated: 2022/01/24 20:10:21 by sameye           ###   ########.fr       */
+/*   Updated: 2022/01/25 15:34:09 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,16 @@ std::cout << "a is " << a.toInt() << " as integer" << std::endl;
 std::cout << "b is " << b.toInt() << " as integer" << std::endl;
 std::cout << "c is " << c.toInt() << " as integer" << std::endl;
 std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+
+/*
+Fixed e;
+std::cout << "getRawBits " << e.getRawBits() << "e is " << e << std::endl;
+e.setRawBits(344);
+std::cout << "getRawBits " << e.getRawBits() << "e is " << e << std::endl;
+std::cout << "toFloa t" << e.toFloat() << "toInt " << e.toInt() << std::endl;
+Fixed g;
+g = e;
+std::cout << "getRawBits " << g.getRawBits() << "e is " << g << std::endl;
 return 0;
+*/
 }

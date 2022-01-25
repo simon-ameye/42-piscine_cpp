@@ -6,13 +6,13 @@
 #    By: sameye <sameye@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/14 13:02:07 by sameye            #+#    #+#              #
-#    Updated: 2022/01/21 15:38:02 by sameye           ###   ########.fr        #
+#    Updated: 2022/01/21 19:29:40 by sameye           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	:= 
+NAME	:= Fixed
 
-SRCS	:= 
+SRCS	:= main.cpp Fixed.cpp
 
 CXX	:= clang++
 CXXFLAGS := -Wall -Werror -Wextra
