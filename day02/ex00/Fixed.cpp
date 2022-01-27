@@ -6,13 +6,13 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 18:37:06 by sameye            #+#    #+#             */
-/*   Updated: 2022/01/24 20:17:01 by sameye           ###   ########.fr       */
+/*   Updated: 2022/01/27 15:25:21 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-int const Fixed::_fract_nb = 8;
+int const Fixed::_fractional_bits = 8;
 
 Fixed::Fixed(void)
 {
