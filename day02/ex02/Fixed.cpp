@@ -6,7 +6,7 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 18:37:06 by sameye            #+#    #+#             */
-/*   Updated: 2022/01/25 18:19:21 by sameye           ###   ########.fr       */
+/*   Updated: 2022/01/27 15:46:01 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,8 +133,8 @@ Fixed	&Fixed::operator++(void)
 
 Fixed	Fixed::operator++(int)
 {
-	Fixed res;
-	res.setRawBits(this->_raw_bits + 1);
+	Fixed res(*this);
+	this->_raw_bits++;
 	return (res);
 }
 
@@ -146,8 +146,8 @@ Fixed	&Fixed::operator--(void)
 
 Fixed	Fixed::operator--(int)
 {
-	Fixed res;
-	res.setRawBits(this->_raw_bits - 1);
+	Fixed res(*this);
+	this->_raw_bits--;
 	return (res);
 }
 

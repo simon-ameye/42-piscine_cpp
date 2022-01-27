@@ -6,7 +6,7 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 18:37:03 by sameye            #+#    #+#             */
-/*   Updated: 2022/01/24 20:03:05 by sameye           ###   ########.fr       */
+/*   Updated: 2022/01/27 15:36:21 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ class Fixed
 
 //overload member functions
 		Fixed				&operator=(Fixed const &rhs);
-//		std::ostream		&operator<<(std::ostream &output, Fixed const &rhs);
 
 //member functions
 		int					getRawBits(void) const;
