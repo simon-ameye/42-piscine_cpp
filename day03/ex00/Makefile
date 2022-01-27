@@ -6,13 +6,13 @@
 #    By: sameye <sameye@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/14 13:02:07 by sameye            #+#    #+#              #
-#    Updated: 2022/01/27 17:40:17 by sameye           ###   ########.fr        #
+#    Updated: 2022/01/27 17:40:44 by sameye           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	:= Fixed
+NAME	:= ClapTrap
 
-SRCS	:= main.cpp Fixed.cpp
+SRCS	:= main.cpp ClapTrap.cpp
 
 CXX	:= clang++
 CXXFLAGS := -Wall -Werror -Wextra
