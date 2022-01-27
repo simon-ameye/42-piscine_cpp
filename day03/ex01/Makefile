@@ -6,11 +6,11 @@
 #    By: sameye <sameye@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/14 13:02:07 by sameye            #+#    #+#              #
-#    Updated: 2022/01/27 18:23:37 by sameye           ###   ########.fr        #
+#    Updated: 2022/01/27 20:22:49 by sameye           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	:= ClapTrap
+NAME	:= ScavTrap
 
 SRCS	:= main.cpp ClapTrap.cpp ScavTrap.cpp
 

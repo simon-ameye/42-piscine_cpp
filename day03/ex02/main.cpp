@@ -6,19 +6,19 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 16:01:58 by sameye            #+#    #+#             */
-/*   Updated: 2022/01/27 20:03:11 by sameye           ###   ########.fr       */
+/*   Updated: 2022/01/27 20:27:35 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int	main(void)
 {
 	ClapTrap	jean_mi("jean_mi");
-	ScavTrap	nicolo("Scavy");
-	ScavTrap	raymond;
-	ScavTrap	copyScav(nicolo);
+	FragTrap	nicolo("Fragy");
+	FragTrap	raymond;
+	FragTrap	copyFrag(nicolo);
 	ClapTrap	copyClap(jean_mi);
 	nicolo.get_info();
 	jean_mi.get_info();
@@ -26,6 +26,6 @@ int	main(void)
 	jean_mi.takeDamage(nicolo.get_damage());
 	nicolo.get_info();
 	jean_mi.get_info();
-	raymond.guardGate();
+	raymond.highFivesGuys();
 	return (0);
 }
