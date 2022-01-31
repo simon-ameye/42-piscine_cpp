@@ -6,7 +6,7 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 18:23:04 by sameye            #+#    #+#             */
-/*   Updated: 2022/01/27 20:03:46 by sameye           ###   ########.fr       */
+/*   Updated: 2022/01/31 14:31:06 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,7 @@
 /*      Constructors                                                          */
 /* ************************************************************************** */
 
-ScavTrap::ScavTrap(void)
-{
-	this->_name = "no name";
-	this->_hit_points = 100;
-	this->_energy_points = 50;
-	this->_attack_damage = 20;
-	std::cout << "ScavTrap Constructor called" << std::endl;
-}
+ScavTrap::ScavTrap(void) : ScavTrap("no name") {}
 
 ScavTrap::ScavTrap(std::string name)
 {
@@ -57,20 +50,16 @@ ScavTrap::~ScavTrap(void)
 
 void	ScavTrap::guardGate(void) const
 {
-	std::cout << "ScavTrap " << get_name() << " have enterred in Gate keeper mode"<< std::endl;
+	std::cout << "ScavTrap " << this->_name << " have enterred in Gate keeper mode"<< std::endl;
 }
 
 
 void	ScavTrap::attack(const std::string& target)
 {
 	if (this->_energy_points <= 0)
-	{
 		std::cout << this->_name << " doesn't have enough Hit points to attack." << std::endl;
-	}
 	else if (this->_hit_points <= 0)
-	{
 		std::cout << this->_name << " is already dead." << std::endl;
-	}
 	else
 	{
 		this->_energy_points--;
@@ -83,11 +72,11 @@ void	ScavTrap::attack(const std::string& target)
 /*      Operator overload                                                     */
 /* ************************************************************************** */
 
-ScavTrap &ScavTrap::operator=(ScavTrap const &right_hand_side)
+ScavTrap &ScavTrap::operator=(ScavTrap const &rhs)
 {
-	this->_name = right_hand_side.get_name();
-	this->_hit_points = right_hand_side.get_hit_points();
-	this->_energy_points = right_hand_side.get_hit_points();
-	this->_attack_damage = right_hand_side.get_damage();
+	this->_name = rhs._name;
+	this->_hit_points = rhs._hit_points;
+	this->_energy_points = rhs._energy_points;
+	this->_attack_damage = rhs._attack_damage;
 	return (*this);
 }

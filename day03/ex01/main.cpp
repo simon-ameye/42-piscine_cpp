@@ -6,26 +6,47 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 16:01:58 by sameye            #+#    #+#             */
-/*   Updated: 2022/01/27 20:03:11 by sameye           ###   ########.fr       */
+/*   Updated: 2022/01/31 15:00:37 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "ClapTrap.hpp"
+#include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+
+void Clap(void)
+{
+	std::cout << "----------ClapTrap----------" << std::endl;
+	ClapTrap ClapUnNamed;
+	ClapUnNamed.get_info();
+	ClapTrap ClapMike("ClapMike");
+	ClapMike.get_info();
+	ClapTrap ClapJoe;
+	ClapJoe = ClapMike;
+	ClapJoe.get_info();
+	ClapUnNamed.attack("ClapMike");
+	ClapMike.takeDamage(0);
+	ClapUnNamed.beRepaired(3);
+	ClapUnNamed.get_info();
+	ClapMike.get_info();
+	ClapUnNamed.attack("ClapMike");
+	ClapMike.takeDamage(0);
+	ClapUnNamed.get_info();
+	ClapMike.get_info();
+}
+
+void Scav(void)
+{
+	std::cout << "----------ScavTrap----------" << std::endl;
+	ScavTrap Scav("Joe");
+	Scav.attack("Jack");
+	Scav.takeDamage(5);
+	Scav.guardGate();
+	Scav.beRepaired(10);
+	Scav.get_info();
+}
 
 int	main(void)
 {
-	ClapTrap	jean_mi("jean_mi");
-	ScavTrap	nicolo("Scavy");
-	ScavTrap	raymond;
-	ScavTrap	copyScav(nicolo);
-	ClapTrap	copyClap(jean_mi);
-	nicolo.get_info();
-	jean_mi.get_info();
-	nicolo.attack("jean_mi");
-	jean_mi.takeDamage(nicolo.get_damage());
-	nicolo.get_info();
-	jean_mi.get_info();
-	raymond.guardGate();
-	return (0);
+	Clap();
+	Scav();
 }

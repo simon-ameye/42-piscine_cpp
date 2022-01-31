@@ -6,13 +6,13 @@
 #    By: sameye <sameye@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/14 13:02:07 by sameye            #+#    #+#              #
-#    Updated: 2022/01/27 20:28:16 by sameye           ###   ########.fr        #
+#    Updated: 2022/01/31 15:01:55 by sameye           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	:= FragTrap
 
-SRCS	:= main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+SRCS	:= main.cpp ClapTrap.cpp FragTrap.cpp
 
 CXX	:= clang++
 CXXFLAGS := -Wall -Werror -Wextra

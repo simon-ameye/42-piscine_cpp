@@ -6,7 +6,7 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 16:03:59 by sameye            #+#    #+#             */
-/*   Updated: 2022/01/27 20:01:56 by sameye           ###   ########.fr       */
+/*   Updated: 2022/01/31 14:20:47 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,7 @@
 /*      Constructors                                                          */
 /* ************************************************************************** */
 
-ClapTrap::ClapTrap(void)
-{
-	this->_name = "no name";
-	this->_hit_points = 10;
-	this->_energy_points = 10;
-	this->_attack_damage = 0;
-	std::cout << "Constructor called" << std::endl;
-}
+ClapTrap::ClapTrap(void) : ClapTrap("no name") {}
 
 ClapTrap::ClapTrap(std::string name)
 {
@@ -31,12 +24,12 @@ ClapTrap::ClapTrap(std::string name)
 	this->_hit_points = 10;
 	this->_energy_points = 10;
 	this->_attack_damage = 0;
-	std::cout << "Constructor called" << std::endl;
+	std::cout << "ClapTrap Constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const &copy)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "ClapTrap Copy constructor called" << std::endl;
 	*this = copy;
 	return ;
 }
@@ -47,45 +40,8 @@ ClapTrap::ClapTrap(ClapTrap const &copy)
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "ClapTrap Destructor called" << std::endl;
 	return ;
-}
-
-/* ************************************************************************** */
-/*      Member functions : getters setters                                    */
-/* ************************************************************************** */
-
-void			ClapTrap::set_damage(unsigned int amount)
-{
-	this->_attack_damage = amount;
-}
-
-int				ClapTrap::get_damage(void) const
-{
-	return this->_attack_damage;
-}
-
-int				ClapTrap::get_energyPoints(void) const
-{
-	return this->_energy_points;
-}
-
-int				ClapTrap::get_hit_points(void) const
-{
-	return (this->_hit_points);
-}
-
-std::string		ClapTrap::get_name(void) const
-{
-	return (this->_name);
-}
-
-void	ClapTrap::get_info(void) const
-{
-	std::cout << "name:\t\t" << _name << std::endl;
-	std::cout << "Hit points:\t" << _hit_points << std::endl;
-	std::cout << "Energy points:\t" << _energy_points << std::endl;
-	std::cout << "Attack damage:\t" << _attack_damage << std::endl;
 }
 
 /* ************************************************************************** */
@@ -95,13 +51,9 @@ void	ClapTrap::get_info(void) const
 void	ClapTrap::attack(const std::string& target)
 {
 	if (this->_energy_points <= 0)
-	{
 		std::cout << this->_name << " doesn't have enough Hit points to attack." << std::endl;
-	}
 	else if (this->_hit_points <= 0)
-	{
 		std::cout << this->_name << " is already dead." << std::endl;
-	}
 	else
 	{
 		this->_energy_points--;
@@ -122,13 +74,9 @@ void	ClapTrap::takeDamage(unsigned int amount)
 void	ClapTrap::beRepaired(unsigned int amount)
 {
 	if (this->_energy_points <= 0)
-	{
 		std::cout << _name << " doesn't have enough hit points to repair." << std::endl;
-	}
 	else if (this->_hit_points <= 0)
-	{
 		std::cout << _name << " is already dead." << std::endl;
-	}
 	else
 	{
 		this->_hit_points += amount;
@@ -137,15 +85,23 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	}
 }
 
+void	ClapTrap::get_info(void) const
+{
+	std::cout << "Name:\t\t" << _name << std::endl;
+	std::cout << "Hit points:\t" << _hit_points << std::endl;
+	std::cout << "Energy points:\t" << _energy_points << std::endl;
+	std::cout << "Attack damage:\t" << _attack_damage << std::endl;
+}
+
 /* ************************************************************************** */
 /*      Operator overload                                                     */
 /* ************************************************************************** */
 
-ClapTrap &ClapTrap::operator=(ClapTrap const &right_hand_side)
+ClapTrap &ClapTrap::operator=(ClapTrap const &rhs)
 {
-	this->_name = right_hand_side.get_name();
-	this->_hit_points = right_hand_side.get_hit_points();
-	this->_energy_points = right_hand_side.get_hit_points();
-	this->_attack_damage = right_hand_side.get_damage();
+	this->_name = rhs._name;
+	this->_hit_points = rhs._hit_points;
+	this->_energy_points = rhs._energy_points;
+	this->_attack_damage = rhs._attack_damage;
 	return (*this);
 }
