@@ -6,7 +6,7 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 18:23:09 by sameye            #+#    #+#             */
-/*   Updated: 2022/01/28 14:43:20 by sameye           ###   ########.fr       */
+/*   Updated: 2022/01/31 14:21:53 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "ClapTrap.hpp"
 #include <iostream>
 
-class ScavTrap : public ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
 	private:
 
@@ -37,7 +37,7 @@ class ScavTrap : public ClapTrap
 /*      Operator overload                                                     */
 /* ************************************************************************** */
 
-		ScavTrap	&operator=(ScavTrap const &right_hand_side);
+		ScavTrap	&operator=(ScavTrap const &rhs);
 };
 
 #endif

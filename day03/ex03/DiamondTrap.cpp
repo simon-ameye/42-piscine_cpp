@@ -6,7 +6,7 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 18:23:04 by sameye            #+#    #+#             */
-/*   Updated: 2022/01/28 18:29:15 by sameye           ###   ########.fr       */
+/*   Updated: 2022/01/31 14:46:23 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,23 @@
 /*      Constructors                                                          */
 /* ************************************************************************** */
 
-DiamondTrap::DiamondTrap(std::string name) 
-	: ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name)
+DiamondTrap::DiamondTrap(void) : DiamondTrap("no name") {}
+
+DiamondTrap::DiamondTrap(std::string name)
 {
 	std::cout << "DiamondTrap constructor called" << std::endl;
 	this->_name = name;
-	this->ScavTrap::_hit_points=this->FragTrap::_hit_points;
-	this->_energy_points = 8;
+	ClapTrap::_name = name + "_clap_name";
+	this->_hit_points = FragTrap::_hit_points;
+	this->_energy_points = ScavTrap::_energy_points;
+	this->_attack_damage = FragTrap::_attack_damage;
+	return ;
+}
+
+DiamondTrap::DiamondTrap(DiamondTrap const& instance)
+{
+	std::cout << "DiamondTrap Copy constructor called" << std::endl;
+	*this = instance;
 	return ;
 }
 
@@ -30,18 +40,35 @@ DiamondTrap::DiamondTrap(std::string name)
 /*      Destructors                                                           */
 /* ************************************************************************** */
 
+DiamondTrap::~DiamondTrap(void)
+{
+	std::cout << "DiamondTrap Destructor called" << std::endl;
+	return ;
+}
+
 /* ************************************************************************** */
 /*      Member functions                                                      */
 /* ************************************************************************** */
 
-void		DiamondTrap::_set_attributes(std::string name)
+void	DiamondTrap::attack(std::string const &target)
 {
-	this->_name = name;
-	this->_hit_points = FragTrap::hitPointsInit; 
-	this->_energyPoints = ScavTrap::energyPointsInit;
-	this->_attackDamage = FragTrap::attackDamageInit;
+	ScavTrap::attack(target);
+}
+
+void	DiamondTrap::whoAmI(void) const
+{
+	std::cout << "My name is " << this->_name << " and my Clap name is " << ClapTrap::_name << std::endl;
 }
 
 /* ************************************************************************** */
 /*      Operator overload                                                     */
 /* ************************************************************************** */
+
+DiamondTrap &DiamondTrap::operator=(DiamondTrap const &rhs)
+{
+	this->_name = rhs._name;
+	this->_hit_points = rhs._hit_points;
+	this->_energy_points = rhs._energy_points;
+	this->_attack_damage = rhs._attack_damage;
+	return (*this);
+}

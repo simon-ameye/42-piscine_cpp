@@ -6,7 +6,7 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 18:23:04 by sameye            #+#    #+#             */
-/*   Updated: 2022/01/27 20:22:08 by sameye           ###   ########.fr       */
+/*   Updated: 2022/01/31 14:30:41 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,7 @@
 /*      Constructors                                                          */
 /* ************************************************************************** */
 
-FragTrap::FragTrap(void)
-{
-	this->_name = "no name";
-	this->_hit_points = 100;
-	this->_energy_points = 100;
-	this->_attack_damage = 30;
-	std::cout << "FragTrap Constructor called" << std::endl;
-}
+FragTrap::FragTrap(void) : FragTrap("no name") {}
 
 FragTrap::FragTrap(std::string name)
 {
@@ -57,20 +50,16 @@ FragTrap::~FragTrap(void)
 
 void	FragTrap::highFivesGuys(void) const
 {
-	std::cout << "FragTrap " << get_name() << " wants to high five!"<< std::endl;
+	std::cout << "FragTrap " << this->_name << " wants to high five!"<< std::endl;
 }
 
 
 void	FragTrap::attack(const std::string& target)
 {
 	if (this->_energy_points <= 0)
-	{
 		std::cout << this->_name << " doesn't have enough Hit points to attack." << std::endl;
-	}
 	else if (this->_hit_points <= 0)
-	{
 		std::cout << this->_name << " is already dead." << std::endl;
-	}
 	else
 	{
 		this->_energy_points--;
@@ -82,11 +71,11 @@ void	FragTrap::attack(const std::string& target)
 /*      Operator overload                                                     */
 /* ************************************************************************** */
 
-FragTrap &FragTrap::operator=(FragTrap const &right_hand_side)
+FragTrap &FragTrap::operator=(FragTrap const &rhs)
 {
-	this->_name = right_hand_side.get_name();
-	this->_hit_points = right_hand_side.get_hit_points();
-	this->_energy_points = right_hand_side.get_hit_points();
-	this->_attack_damage = right_hand_side.get_damage();
+	this->_name = rhs._name;
+	this->_hit_points = rhs._hit_points;
+	this->_energy_points = rhs._energy_points;
+	this->_attack_damage = rhs._attack_damage;
 	return (*this);
 }
