@@ -6,7 +6,7 @@
 #    By: sameye <sameye@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/14 13:02:07 by sameye            #+#    #+#              #
-#    Updated: 2022/01/31 15:01:55 by sameye           ###   ########.fr        #
+#    Updated: 2022/01/31 15:10:58 by sameye           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,8 @@ NAME	:= FragTrap
 
 SRCS	:= main.cpp ClapTrap.cpp FragTrap.cpp
 
-CXX	:= clang++
-CXXFLAGS := -Wall -Werror -Wextra
+CXX	:= c++
+CXXFLAGS := -Wall -Werror -Wextra -std=c++98
 
 OBJS	:= $(SRCS:.cpp=.o)
 

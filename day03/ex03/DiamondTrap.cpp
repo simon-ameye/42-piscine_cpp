@@ -6,7 +6,7 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 18:23:04 by sameye            #+#    #+#             */
-/*   Updated: 2022/01/31 14:46:23 by sameye           ###   ########.fr       */
+/*   Updated: 2022/01/31 15:07:40 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,16 @@
 /*      Constructors                                                          */
 /* ************************************************************************** */
 
-DiamondTrap::DiamondTrap(void) : DiamondTrap("no name") {}
+DiamondTrap::DiamondTrap(void)
+{
+	std::cout << "DiamondTrap constructor called" << std::endl;
+	this->_name = "no name";
+	ClapTrap::_name = "no name_clap_name";
+	this->_hit_points = FragTrap::_hit_points;
+	this->_energy_points = ScavTrap::_energy_points;
+	this->_attack_damage = FragTrap::_attack_damage;
+	return ;
+}
 
 DiamondTrap::DiamondTrap(std::string name)
 {

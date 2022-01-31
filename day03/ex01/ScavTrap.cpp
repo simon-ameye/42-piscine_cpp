@@ -6,7 +6,7 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 18:23:04 by sameye            #+#    #+#             */
-/*   Updated: 2022/01/31 14:31:06 by sameye           ###   ########.fr       */
+/*   Updated: 2022/01/31 15:06:39 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,14 @@
 /*      Constructors                                                          */
 /* ************************************************************************** */
 
-ScavTrap::ScavTrap(void) : ScavTrap("no name") {}
+ScavTrap::ScavTrap(void)
+{
+	this->_name = "no name";
+	this->_hit_points = 100;
+	this->_energy_points = 50;
+	this->_attack_damage = 20;
+	std::cout << "ScavTrap Constructor called" << std::endl;	
+}
 
 ScavTrap::ScavTrap(std::string name)
 {

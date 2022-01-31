@@ -6,7 +6,7 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 16:03:59 by sameye            #+#    #+#             */
-/*   Updated: 2022/01/31 14:20:47 by sameye           ###   ########.fr       */
+/*   Updated: 2022/01/31 15:08:07 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,14 @@
 /*      Constructors                                                          */
 /* ************************************************************************** */
 
-ClapTrap::ClapTrap(void) : ClapTrap("no name") {}
+ClapTrap::ClapTrap(void)
+{
+	this->_name = "no name";
+	this->_hit_points = 10;
+	this->_energy_points = 10;
+	this->_attack_damage = 0;
+	std::cout << "ClapTrap Constructor called" << std::endl;
+}
 
 ClapTrap::ClapTrap(std::string name)
 {

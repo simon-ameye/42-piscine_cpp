@@ -6,7 +6,7 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 18:23:04 by sameye            #+#    #+#             */
-/*   Updated: 2022/01/31 14:30:41 by sameye           ###   ########.fr       */
+/*   Updated: 2022/01/31 15:07:08 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,14 @@
 /*      Constructors                                                          */
 /* ************************************************************************** */
 
-FragTrap::FragTrap(void) : FragTrap("no name") {}
+FragTrap::FragTrap(void)
+{
+	this->_name = "no name";
+	this->_hit_points = 100;
+	this->_energy_points = 100;
+	this->_attack_damage = 30;
+	std::cout << "FragTrap Constructor called" << std::endl;	
+}
 
 FragTrap::FragTrap(std::string name)
 {
