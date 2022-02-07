@@ -6,12 +6,11 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 16:48:55 by sameye            #+#    #+#             */
-/*   Updated: 2022/01/31 19:40:16 by sameye           ###   ########.fr       */
+/*   Updated: 2022/02/07 17:42:58 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
-#include "Animal.hpp"
 
 Cat::Cat(void) : Animal("Cat")
 {

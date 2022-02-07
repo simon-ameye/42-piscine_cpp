@@ -6,7 +6,7 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 16:49:05 by sameye            #+#    #+#             */
-/*   Updated: 2022/01/31 19:46:55 by sameye           ###   ########.fr       */
+/*   Updated: 2022/02/07 17:43:39 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include "Animal.hpp"
 #include "Brain.hpp"
+#include <iostream>
 
 class Dog : public Animal
 {
@@ -23,7 +24,7 @@ class Dog : public Animal
 
 	public:
 	Dog(void);
-	Dog(Animal const& instance);
+	Dog(Dog const& instance);
 	~Dog(void);
 	Dog	&operator=(Dog const &right_hand_side);
 	virtual void makeSound(void)const;

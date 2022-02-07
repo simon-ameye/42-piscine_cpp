@@ -6,11 +6,10 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 16:48:59 by sameye            #+#    #+#             */
-/*   Updated: 2022/01/31 19:23:00 by sameye           ###   ########.fr       */
+/*   Updated: 2022/02/07 17:54:38 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "Dog.hpp"
 
 Dog::Dog(void) : Animal("Dog")
@@ -20,7 +19,7 @@ Dog::Dog(void) : Animal("Dog")
 	return ;
 }
 
-Dog::Dog(Animal const& instance) : Animal(instance)
+Dog::Dog(Dog const& instance) : Animal(instance)
 {
 	*this = instance;
 	std::cout << "dog copied" << std::endl;
@@ -37,6 +36,7 @@ Dog::~Dog(void)
 Dog	&Dog::operator=(Dog const &right_hand_side)
 {
 	this->_type = right_hand_side._type;
+	this->_brain = new Brain(*right_hand_side._brain);
 	return *this;
 }
 
