@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/31 16:49:05 by sameye            #+#    #+#             */
-/*   Updated: 2022/02/07 17:37:39 by sameye           ###   ########.fr       */
+/*   Created: 2022/01/31 16:48:52 by sameye            #+#    #+#             */
+/*   Updated: 2022/02/08 16:39:00 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
+#ifndef AANIMAL_HPP
+#define AANIMAL_HPP
 
-#include "Animal.hpp"
+#include <iostream>
 
-class Dog : public Animal
+class AAnimal
 {
-	private:
+private:
 
-	public:
-	Dog(void);
-	Dog(Dog const& instance);
-	~Dog(void);
-	Dog	&operator=(Dog const &right_hand_side);
+protected:
+	std::string _type;
+	AAnimal(std::string typeName);
 
-	virtual void makeSound(void)const;
+public:
+	AAnimal(void);
+	AAnimal(AAnimal const& instance);
+	virtual ~AAnimal(void);
+	AAnimal	&operator=(AAnimal const &right_hand_side);
+	virtual void makeSound(void)const = 0;
 };
-
 #endif
