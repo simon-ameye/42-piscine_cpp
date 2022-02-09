@@ -22,7 +22,6 @@ class Cure : public AMateria
 		Cure();
 		Cure(Cure const &src);
 		~Cure();
-
 		Cure		&operator=(Cure const &rhs);
 		AMateria	*clone() const;
 		void		use(ICharacter &target);

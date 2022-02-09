@@ -12,14 +12,14 @@
 
 # include "Ice.hpp"
 
-Ice::Ice()
+Ice::Ice(void) : AMateria("ice")
 {
 	std::cout << "Ice constructor called" << std::endl;
 	this->_type = "ice";
 	return ;
 }
 
-Ice::Ice(Ice const &copy)
+Ice::Ice(Ice const &copy) : AMateria("ice")
 {
 	std::cout << "Ice copy constructor called" << std::endl;
 	*this = copy;

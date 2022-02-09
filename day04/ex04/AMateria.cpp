@@ -19,6 +19,11 @@ AMateria::AMateria(void)
 	return ;
 }
 
+AMateria::AMateria(std::string const & type): _type(type)
+{
+	std::cout << "New materia (" << type << ") created!" << std::endl;
+	return ;
+}
 
 AMateria::AMateria(AMateria const &copy)
 {

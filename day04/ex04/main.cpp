@@ -23,7 +23,7 @@ int main()
 	std::cout << "------------------------------------------" << std::endl;
 	ICharacter* Helen = new Character("Helen");
 	ICharacter* John = new Character("John");
-	std::cout << "Creating MateriaSource:" << std::endl;
+	std::cout << "\nCreating MateriaSource:" << std::endl;
 	std::cout << "------------------------------------------" << std::endl;
 	IMateriaSource* source = new MateriaSource();
 	std::cout <<  "\nLearning:" << std::endl;
@@ -65,17 +65,23 @@ int main()
 	mat3 = source->createMateria("ice");
 	mat4 = source->createMateria("cure");
 	John->equip(mat3);
-	John->equip(mat4);
+	John->equip(new Ice());
+	John->equip(new Ice());
+	John->equip(mat4); //John is full, mat4 not equiped
+	delete mat4;
+
 	std::cout << "\nMaking the materiaSource full:" << std::endl;
 	std::cout << "------------------------------------------" << std::endl;
+	AMateria* mat9 = new Cure();
 	source->learnMateria(new Cure());
 	source->learnMateria(new Ice());
-	source->learnMateria(new Ice());
-	source->learnMateria(new Cure());
+	source->learnMateria(mat9); // should not be learned because source is full
+	delete mat9;
 	std::cout << "\nCreating an unknown type materia:" << std::endl;
 	std::cout << "------------------------------------------" << std::endl;
 	AMateria *unknown;
 	unknown = source->createMateria("unknown");
+	John->equip(unknown);
 	std::cout << "\nDeleting Characters and MateriaSource:" << std::endl;
 	std::cout << "------------------------------------------" << std::endl;
 	delete John;

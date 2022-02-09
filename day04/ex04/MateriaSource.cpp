@@ -72,15 +72,15 @@ void			MateriaSource::learnMateria(AMateria *materia)
 	{
 		if (!this->source[i])
 		{
-			this->source[i] = materia->clone();
+			this->source[i] = materia;
 			break ;
 		}
 		i++;
 	}
 	if (i == 4)
-		std::cout << "The MateriaSource is full" << std::endl;
+		std::cout << "materiasource full" << std::endl;
 	else
-		std::cout << materia->getType() << " added to MasteriaSource at [ " << i << " ] position" << std::endl;
+		std::cout << materia->getType() << " added materiasource at [ " << i << " ] position" << std::endl;
 	return ;
 }
 
@@ -92,11 +92,11 @@ AMateria		*MateriaSource::createMateria(std::string const &type)
 	{
 		if (this->source[i] && this->source[i]->getType() == type)
 		{
-			std::cout << "New " << type << " was created from your MateriaSource" << std::endl;
+			std::cout << "New " << type << " was created from  materiasource" << std::endl;
 			return (this->source[i]->clone());
 		}
 		i++;
 	}
-	std::cout << "Type " << type << " not found in MateriaSource" << std::endl;
+	std::cout << "Type " << type << " not found in materiasource" << std::endl;
 	return (0);
 }

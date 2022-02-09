@@ -12,14 +12,14 @@
 
 # include "Cure.hpp"
 
-Cure::Cure(void)
+Cure::Cure(void) : AMateria("cure")
 {
 	std::cout << "Cure constructor called" << std::endl;
 	this->_type = "cure";
 	return ;
 }
 
-Cure::Cure(Cure const &copy)
+Cure::Cure(Cure const &copy) : AMateria("cure")
 {
 	std::cout << "Cure copy constructor called" << std::endl;
 	*this = copy;
