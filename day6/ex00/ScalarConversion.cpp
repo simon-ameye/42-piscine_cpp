@@ -6,7 +6,7 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 17:50:22 by sameye            #+#    #+#             */
-/*   Updated: 2022/02/16 16:02:19 by sameye           ###   ########.fr       */
+/*   Updated: 2022/02/16 16:36:42 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int ScalarConversion::_is_char(void)
 int ScalarConversion::_is_int(void)
 {
 	int i = 0;
-	if (this->_str[i] == '-')
+	if (this->_str[i] == '-' || this->_str[i] == '+')
 		i++;
 	if (!_jump_num_block(i, this->_str))
 		return (false);
@@ -87,7 +87,7 @@ int ScalarConversion::_is_int(void)
 int ScalarConversion::_is_float(void)
 {
 	int i = 0;
-	if (this->_str[i] == '-')
+	if (this->_str[i] == '-' || this->_str[i] == '+')
 		i++;
 	if (!_jump_num_block(i, this->_str))
 		return (false);
@@ -107,7 +107,7 @@ int ScalarConversion::_is_float(void)
 int ScalarConversion::_is_double(void)
 {
 	int i = 0;
-	if (this->_str[i] == '-')
+	if (this->_str[i] == '-' || this->_str[i] == '+')
 		i++;
 	if (!_jump_num_block(i, this->_str))
 		return (false);
@@ -264,18 +264,20 @@ void ScalarConversion::_set_strings_pseudo_literal(void)
 
 void ScalarConversion::_check_overflow(void)
 {
-	int cmin = std::numeric_limits<char>::min();
-	int cmax = std::numeric_limits<char>::max();
-	int imin = std::numeric_limits<int>::min();
-	int imax = std::numeric_limits<int>::max();
-	int fmin = std::numeric_limits<float>::min();
-	int fmax = std::numeric_limits<float>::max();
+	//int cmin = std::numeric_limits<char>::min();
+	//int cmax = std::numeric_limits<char>::max();
+	//int imin = std::numeric_limits<int>::min();
+	//int imax = std::numeric_limits<int>::max();
+	//int fmax = std::numeric_limits<float>::max();
 
-	if (this->_double > cmax || this->_double < cmin)
+	//int fmin = std::numeric_limits<float>::min();
+	//std::cout << "limites : " << cmin << " " << cmax << " " << imin << " " << imax << " " << fmin << " " << fmax << " " << std::endl;
+
+	if (this->_double > std::numeric_limits<char>::max() || this->_double < std::numeric_limits<char>::min())
 		this->_char_str = "overflow";
-	if (this->_double > imax || this->_double < imin)
+	if (this->_double > std::numeric_limits<int>::max() || this->_double < std::numeric_limits<int>::min())
 		this->_int_str = "overflow";
-	if (this->_double > fmax || this->_double < fmin)
+	if (this->_double > std::numeric_limits<float>::max() || this->_double < -std::numeric_limits<float>::max())
 		this->_float_str = "overflow";
 }
 
