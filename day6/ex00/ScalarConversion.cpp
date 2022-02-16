@@ -6,7 +6,7 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 17:50:22 by sameye            #+#    #+#             */
-/*   Updated: 2022/02/16 16:36:42 by sameye           ###   ########.fr       */
+/*   Updated: 2022/02/16 16:53:28 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -264,15 +264,6 @@ void ScalarConversion::_set_strings_pseudo_literal(void)
 
 void ScalarConversion::_check_overflow(void)
 {
-	//int cmin = std::numeric_limits<char>::min();
-	//int cmax = std::numeric_limits<char>::max();
-	//int imin = std::numeric_limits<int>::min();
-	//int imax = std::numeric_limits<int>::max();
-	//int fmax = std::numeric_limits<float>::max();
-
-	//int fmin = std::numeric_limits<float>::min();
-	//std::cout << "limites : " << cmin << " " << cmax << " " << imin << " " << imax << " " << fmin << " " << fmax << " " << std::endl;
-
 	if (this->_double > std::numeric_limits<char>::max() || this->_double < std::numeric_limits<char>::min())
 		this->_char_str = "overflow";
 	if (this->_double > std::numeric_limits<int>::max() || this->_double < std::numeric_limits<int>::min())
@@ -293,4 +284,3 @@ void ScalarConversion::display(void)
 	std::cout << "float: " << this->_float_str << std::endl;
 	std::cout << "double: " << this->_double_str << std::endl;
 }
-
