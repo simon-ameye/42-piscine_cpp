@@ -6,7 +6,7 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 17:50:26 by sameye            #+#    #+#             */
-/*   Updated: 2022/02/15 13:16:01 by sameye           ###   ########.fr       */
+/*   Updated: 2022/02/17 18:13:55 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,15 @@
 
 int main(int ac, char **av)
 {
+	/*
+	float d=4f;
+	float y=-0.0f;
+	float x=-.0f;
+	float a=-0.f;
+	float yz=-0.0;
+	float xz=-.0;
+	float az=-0.;
+	*/
 	if (ac != 2)
 	{
 		std::cout << "Wrong arguments" << std::endl;

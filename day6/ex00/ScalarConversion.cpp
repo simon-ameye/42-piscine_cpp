@@ -6,7 +6,7 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 17:50:22 by sameye            #+#    #+#             */
-/*   Updated: 2022/02/16 16:53:28 by sameye           ###   ########.fr       */
+/*   Updated: 2022/02/17 18:15:34 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,6 @@ int ScalarConversion::_is_char(void)
 	return (true);
 }
 
-
 int ScalarConversion::_is_int(void)
 {
 	int i = 0;
@@ -87,19 +86,18 @@ int ScalarConversion::_is_int(void)
 int ScalarConversion::_is_float(void)
 {
 	int i = 0;
+	int ip = 0;
 	if (this->_str[i] == '-' || this->_str[i] == '+')
 		i++;
-	if (!_jump_num_block(i, this->_str))
-		return (false);
+	ip = i;
+	_jump_num_block(i, this->_str);
 	if (this->_str[i] != '.')
 		return (false);
 	i++;
-	if (!_jump_num_block(i, this->_str))
+	_jump_num_block(i, this->_str);
+	if (i <= ip + 1)
 		return (false);
-	if (this->_str[i] != 'f')
-		return (false);
-	i++;
-	if (this->_str[i])
+	if (this->_str[i] != 'f' || this->_str[i+1])
 		return (false);
 	return (true);
 }
@@ -107,14 +105,16 @@ int ScalarConversion::_is_float(void)
 int ScalarConversion::_is_double(void)
 {
 	int i = 0;
+	int ip = 0;
 	if (this->_str[i] == '-' || this->_str[i] == '+')
 		i++;
-	if (!_jump_num_block(i, this->_str))
-		return (false);
+	ip = i;
+	_jump_num_block(i, this->_str);
 	if (this->_str[i] != '.')
 		return (false);
 	i++;
-	if (!_jump_num_block(i, this->_str))
+	_jump_num_block(i, this->_str);
+	if (i <= ip + 1)
 		return (false);
 	if (this->_str[i])
 		return (false);
@@ -243,21 +243,21 @@ void ScalarConversion::_set_strings_pseudo_literal(void)
 	{
 		this->_char_str = "impossible";
 		this->_int_str = "impossible";
-		this->_float_str = "+inff";
+		this->_float_str = "+inf";
 		this->_double_str = "+inf";
 	}
 	else if(str == "-inf" || str == "-inff")
 	{
 		this->_char_str = "impossible";
 		this->_int_str = "impossible";
-		this->_float_str = "-inff";
+		this->_float_str = "-inf";
 		this->_double_str = "-inf";
 	}
 	else if(str == "nan" || str == "nanf")
 	{
 		this->_char_str = "impossible";
 		this->_int_str = "impossible";
-		this->_float_str = "nanf";
+		this->_float_str = "nan";
 		this->_double_str = "nan";
 	}
 }
@@ -265,11 +265,11 @@ void ScalarConversion::_set_strings_pseudo_literal(void)
 void ScalarConversion::_check_overflow(void)
 {
 	if (this->_double > std::numeric_limits<char>::max() || this->_double < std::numeric_limits<char>::min())
-		this->_char_str = "overflow";
+		this->_char_str = "overflow for type : c";
 	if (this->_double > std::numeric_limits<int>::max() || this->_double < std::numeric_limits<int>::min())
-		this->_int_str = "overflow";
+		this->_int_str = "overflow for type : i";
 	if (this->_double > std::numeric_limits<float>::max() || this->_double < -std::numeric_limits<float>::max())
-		this->_float_str = "overflow";
+		this->_float_str = "overflow for type : ";
 }
 
 void ScalarConversion::display(void)
@@ -279,8 +279,8 @@ void ScalarConversion::display(void)
 	else
 		ScalarConversion::_set_strings();
 	ScalarConversion::_check_overflow();
-	std::cout << "char: " << this->_char_str << std::endl;
+	std::cout << "char: '" << this->_char_str << "'" << std::endl;
 	std::cout << "int: " << this->_int_str << std::endl;
-	std::cout << "float: " << this->_float_str << std::endl;
+	std::cout << "float: " << this->_float_str << "f" << std::endl;
 	std::cout << "double: " << this->_double_str << std::endl;
 }
