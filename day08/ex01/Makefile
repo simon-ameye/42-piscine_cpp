@@ -6,13 +6,13 @@
 #    By: sameye <sameye@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/14 13:02:07 by sameye            #+#    #+#              #
-#    Updated: 2022/02/23 16:40:16 by sameye           ###   ########.fr        #
+#    Updated: 2022/02/24 16:10:51 by sameye           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	:= Array
+NAME	:= span
 
-SRCS	:= main.cpp
+SRCS	:= main.cpp Span.cpp
 OBJS	:= $(SRCS:.cpp=.o)
 
 CXX	:= clang++
