@@ -6,13 +6,13 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 15:01:53 by sameye            #+#    #+#             */
-/*   Updated: 2022/01/20 17:13:38 by sameye           ###   ########.fr       */
+/*   Updated: 2022/02/25 15:53:53 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
-#include<sstream>
+#include <sstream>
 #include <fstream>
 
 #define	RETURN_SUCCESS 0
