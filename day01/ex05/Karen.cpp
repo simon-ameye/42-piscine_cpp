@@ -6,7 +6,7 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 17:15:59 by sameye            #+#    #+#             */
-/*   Updated: 2022/01/21 14:33:22 by sameye           ###   ########.fr       */
+/*   Updated: 2022/02/25 19:01:25 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,19 +44,16 @@ void	Karen::complain(std ::string level)
 void	Karen::debug(void)
 {
 	std::cout << "[ DEBUG ]\nI love to get extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger. I just love it!\n" << std::endl;
-	(this->*fnct_ptrs[1])();
 }
 
 void	Karen::info(void)
 {
 	std::cout << "[ INFO ]\nI cannot believe adding extra bacon cost more money. You don’t put enough!. If you did I would not have to ask for it!\n" << std::endl;
-	(this->*fnct_ptrs[2])();
 }
 
 void	Karen::warning(void)
 {
 	std::cout << "[ WARNING ]\nI think I deserve to have some extra bacon for free. I’ve been coming here for years and you just started working here last month.\n" << std::endl;
-	(this->*fnct_ptrs[3])();
 }
 
 void	Karen::error(void)
