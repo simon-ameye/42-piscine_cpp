@@ -6,7 +6,7 @@
 #    By: sameye <sameye@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/14 13:02:07 by sameye            #+#    #+#              #
-#    Updated: 2022/02/22 16:25:46 by sameye           ###   ########.fr        #
+#    Updated: 2022/02/25 13:14:07 by sameye           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME	:= iter
 SRCS	:= main.cpp
 OBJS	:= $(SRCS:.cpp=.o)
 
-CXX	:= clang++
+CXX	:= c++
 CXXFLAGS := -Wall -Werror -Wextra -std=c++98
 
 all: $(NAME)

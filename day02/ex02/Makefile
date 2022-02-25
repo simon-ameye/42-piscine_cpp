@@ -6,7 +6,7 @@
 #    By: sameye <sameye@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/14 13:02:07 by sameye            #+#    #+#              #
-#    Updated: 2022/01/27 17:40:17 by sameye           ###   ########.fr        #
+#    Updated: 2022/02/25 13:14:07 by sameye           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,8 @@ NAME	:= Fixed
 
 SRCS	:= main.cpp Fixed.cpp
 
-CXX	:= clang++
-CXXFLAGS := -Wall -Werror -Wextra
+CXX	:= c++
+CXXFLAGS := -Wall -Werror -Wextra -std=c++98
 
 OBJS	:= $(SRCS:.cpp=.o)
 

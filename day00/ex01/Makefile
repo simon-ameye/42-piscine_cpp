@@ -6,7 +6,7 @@
 #    By: sameye <sameye@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/14 13:02:07 by sameye            #+#    #+#              #
-#    Updated: 2022/01/17 12:40:36 by sameye           ###   ########.fr        #
+#    Updated: 2022/02/25 13:14:07 by sameye           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,8 @@ NAME	:= phonebook
 SRCS	:= phonebook.cpp Contact.class.cpp Phonebook.class.cpp
 OBJS	:= $(SRCS:.cpp=.o)
 
-CXX	:= clang++
-CXXFLAGS := -Wall -Werror -Wextra
+CXX	:= c++
+CXXFLAGS := -Wall -Werror -Wextra -std=c++98
 
 all: $(NAME)
 
