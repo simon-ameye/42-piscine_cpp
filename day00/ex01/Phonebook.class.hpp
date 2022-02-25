@@ -6,7 +6,7 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 16:49:43 by sameye            #+#    #+#             */
-/*   Updated: 2022/01/19 17:57:39 by sameye           ###   ########.fr       */
+/*   Updated: 2022/02/25 13:41:05 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ class Phonebook
 		void			_show_truncate_contact(Contact contact, int index);
 		void			_show_contact(Contact contact);
 		void			_print_truncate_str(std::string str);
+		int				_atoi(std::string str);
+
 };
 
 #endif
