@@ -6,7 +6,7 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 13:21:50 by sameye            #+#    #+#             */
-/*   Updated: 2022/01/17 16:29:01 by sameye           ###   ########.fr       */
+/*   Updated: 2022/02/25 15:03:37 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,6 +120,6 @@ Account::~Account(void)
 {
 	Account::_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex << ";";
-	std::cout << "amount:" << this->_amount;
+	std::cout << "amount:" << this->_amount << ";";
 	std::cout << "closed" << std::endl;
 }
