@@ -6,7 +6,7 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 18:37:06 by sameye            #+#    #+#             */
-/*   Updated: 2022/01/27 15:46:01 by sameye           ###   ########.fr       */
+/*   Updated: 2022/02/28 16:33:57 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -183,6 +183,16 @@ Fixed const	&Fixed::min(Fixed const &n1, Fixed const &n2)
 }
 
 Fixed const	&Fixed::max(Fixed const &n1, Fixed const &n2)
+{
+	return (n1._raw_bits > n2._raw_bits ? n1 : n2);
+}
+
+Fixed	&Fixed::min(Fixed &n1, Fixed &n2)
+{
+	return (n1._raw_bits < n2._raw_bits ? n1 : n2);
+}
+
+Fixed	&Fixed::max(Fixed &n1, Fixed &n2)
 {
 	return (n1._raw_bits > n2._raw_bits ? n1 : n2);
 }

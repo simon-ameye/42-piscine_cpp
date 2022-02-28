@@ -6,7 +6,7 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 18:37:03 by sameye            #+#    #+#             */
-/*   Updated: 2022/01/25 18:23:38 by sameye           ###   ########.fr       */
+/*   Updated: 2022/02/28 16:33:33 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,8 @@ class Fixed
 		int					toInt(void) const;
 		static Fixed const	&min(Fixed const &n1, Fixed const &n2);
 		static Fixed const	&max(Fixed const &n1, Fixed const &n2);
+		static Fixed	&min(Fixed &n1, Fixed &n2);
+		static Fixed	&max(Fixed &n1, Fixed &n2);
 
 	private:
 
