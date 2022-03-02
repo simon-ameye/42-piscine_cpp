@@ -6,7 +6,7 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 16:01:58 by sameye            #+#    #+#             */
-/*   Updated: 2022/01/31 15:00:37 by sameye           ###   ########.fr       */
+/*   Updated: 2022/03/02 14:51:26 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void Scav(void)
 {
 	std::cout << "----------ScavTrap----------" << std::endl;
 	ScavTrap Scav("Joe");
+	Scav.get_info();
 	Scav.attack("Jack");
 	Scav.takeDamage(5);
 	Scav.guardGate();

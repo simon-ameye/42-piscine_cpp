@@ -6,7 +6,7 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 18:23:09 by sameye            #+#    #+#             */
-/*   Updated: 2022/01/31 12:16:59 by sameye           ###   ########.fr       */
+/*   Updated: 2022/03/02 15:07:39 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include "FragTrap.hpp"
 #include <iostream>
 
-class DiamondTrap : public ScavTrap, public FragTrap
+class DiamondTrap : virtual public ScavTrap, virtual public FragTrap
 {
 	private:
 		std::string		_name;
