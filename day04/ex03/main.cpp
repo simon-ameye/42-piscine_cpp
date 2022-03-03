@@ -22,7 +22,7 @@ int main()
 	std::cout << "\nCreating characters:" << std::endl;
 	std::cout << "------------------------------------------" << std::endl;
 	ICharacter* Helen = new Character("Helen");
-	ICharacter* John = new Character("John");
+	Character* John = new Character("John");
 	std::cout << "\nCreating MateriaSource:" << std::endl;
 	std::cout << "------------------------------------------" << std::endl;
 	IMateriaSource* source = new MateriaSource();
