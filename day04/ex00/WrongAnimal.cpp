@@ -6,7 +6,7 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 16:51:28 by sameye            #+#    #+#             */
-/*   Updated: 2022/01/31 17:34:17 by sameye           ###   ########.fr       */
+/*   Updated: 2022/03/03 12:45:02 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,6 @@ std::string WrongAnimal::getType(void)const
 
 void WrongAnimal::makeSound(void)const
 {
-	std::cout << "..." << std::endl;
+	std::cout << "wrong ..." << std::endl;
 	return ;
 }
