@@ -6,7 +6,7 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 17:23:49 by sameye            #+#    #+#             */
-/*   Updated: 2022/02/07 17:39:02 by sameye           ###   ########.fr       */
+/*   Updated: 2022/03/03 13:09:44 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,6 @@ int main(void)
 	delete heapDog;
 	delete heapCat;
 
-	std::cout << "\n\n---------STACK + DEEP TEST---------\n\n" << std::endl;
-
-	Dog dog;
-	Cat cat;
-	Cat catCopy(cat);
-	Dog dogCopy(dog);
-
 	std::cout << "\n\n---------ARRAY TEST---------\n\n" << std::endl;
 
 	Animal *animals[100];
@@ -47,4 +40,19 @@ int main(void)
 		animals[i]->makeSound();
 		delete animals[i];
 	}
+
+	std::cout << "\n\n---------DEEP TEST I---------\n\n" << std::endl;
+
+	Cat cat;
+	Cat catCopy(cat);
+	Dog dog;
+	Dog dogCopy = dog;
+	
+	std::cout << "\n\n---------DEEP TEST II ---------\n\n" << std::endl;
+	Dog *dog2 = new Dog();
+	Dog *dogCopy2 = new Dog(*dog2);
+	delete dog2;
+	delete dogCopy2;
+	
+	std::cout << "\n\n---------DESTRUCTION---------\n\n" << std::endl;
 }
