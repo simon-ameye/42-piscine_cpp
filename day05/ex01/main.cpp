@@ -6,7 +6,7 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 12:56:11 by sameye            #+#    #+#             */
-/*   Updated: 2022/02/10 16:38:22 by sameye           ###   ########.fr       */
+/*   Updated: 2022/03/04 12:06:12 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ int main(void)
 
 	std::cout << bu1 << std::endl;
 	std::cout << bu2 << std::endl;
+	std::cout << fo1 << std::endl;
+	std::cout << fo2 << std::endl;
 	bu1.signForm(fo1);
 	bu1.signForm(fo2);
 	bu2.signForm(fo2);
