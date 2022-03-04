@@ -6,7 +6,7 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 16:44:10 by sameye            #+#    #+#             */
-/*   Updated: 2022/02/10 19:25:58 by sameye           ###   ########.fr       */
+/*   Updated: 2022/03/04 12:46:26 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 #include <time.h>
 #include <cstdlib>
 #include <math.h>
+
+RobotomyRequestForm::RobotomyRequestForm(void) : AForm("RobotomyRequestForm", 72, 45)
+{
+	std::cout << *this << std::endl;
+	return ;
+}
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", 72, 45)
 {

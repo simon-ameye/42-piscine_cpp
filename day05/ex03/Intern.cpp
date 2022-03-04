@@ -6,7 +6,7 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 19:52:07 by sameye            #+#    #+#             */
-/*   Updated: 2022/02/10 20:10:36 by sameye           ###   ########.fr       */
+/*   Updated: 2022/03/04 13:25:19 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,14 +61,19 @@ AForm	*Intern::makeForm(std::string name, std::string target)
 	switch (Intern::_form_finder(name))
 	{
 		case 0:
+			std::cout << "Intern creates " << "ShrubberyCreationForm" << std::endl;
 			return (new ShrubberyCreationForm(target));
 			break;
 		case 1:
+			std::cout << "Intern creates " << "RobotomyRequestForm" << std::endl;
 			return (new RobotomyRequestForm(target));
 			break;
 		case 2:
+			std::cout << "Intern creates " << "PresidentialPardonForm" << std::endl;
 			return (new PresidentialPardonForm(target));
 			break;
+		default :
+			std::cout << "Intern can not create : Form name not existing" << std::endl;
 	}
 	return (NULL);
 }

@@ -6,13 +6,19 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 16:44:04 by sameye            #+#    #+#             */
-/*   Updated: 2022/02/10 19:25:48 by sameye           ###   ########.fr       */
+/*   Updated: 2022/03/04 12:45:44 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 #include <iostream>
 #include <fstream>
+
+ShrubberyCreationForm::ShrubberyCreationForm(void) : AForm("ShrubberyCreationForm", 145, 137)
+{
+	std::cout << *this << std::endl;
+	return ;
+}
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyCreationForm", 145, 137)
 {
