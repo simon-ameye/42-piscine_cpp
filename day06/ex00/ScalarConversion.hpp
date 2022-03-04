@@ -6,7 +6,7 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 17:50:25 by sameye            #+#    #+#             */
-/*   Updated: 2022/02/16 15:57:29 by sameye           ###   ########.fr       */
+/*   Updated: 2022/03/04 12:58:41 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,18 +66,12 @@ class ScalarConversion
 	class TypeNotFound : public std::exception
 	{
 		public:
-			virtual const char* what() const throw()
-			{
-				return ("value is neither int, float, double or printable char");
-			}
+			virtual const char* what() const throw();
 	};
 
 	class InputOverflow : public std::exception
 	{
 		public:
-			virtual const char* what() const throw()
-			{
-				return ("input value overflow, conversion inpossible");
-			}
+			virtual const char* what() const throw();
 	};
 };

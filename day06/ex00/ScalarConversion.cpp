@@ -6,7 +6,7 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 17:50:22 by sameye            #+#    #+#             */
-/*   Updated: 2022/02/17 18:15:34 by sameye           ###   ########.fr       */
+/*   Updated: 2022/03/04 12:59:21 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -283,4 +283,14 @@ void ScalarConversion::display(void)
 	std::cout << "int: " << this->_int_str << std::endl;
 	std::cout << "float: " << this->_float_str << "f" << std::endl;
 	std::cout << "double: " << this->_double_str << std::endl;
+}
+
+const char* ScalarConversion::TypeNotFound::what() const throw()
+{
+	return ("value is neither int, float, double or printable char");
+}
+
+const char* ScalarConversion::InputOverflow::what() const throw()
+{
+	return ("input value overflow, conversion inpossible");
 }

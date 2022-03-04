@@ -6,7 +6,7 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 12:56:07 by sameye            #+#    #+#             */
-/*   Updated: 2022/02/10 19:28:55 by sameye           ###   ########.fr       */
+/*   Updated: 2022/03/04 12:56:36 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,4 +114,14 @@ void		Bureaucrat::executeForm(AForm const & form)
 	}
 	std::cout	<< this->_name << " executes " << form.getName() << std::endl;
 		return ;
+}
+
+const char* Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return ("Grade too high");
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return ("Grade too low");
 }

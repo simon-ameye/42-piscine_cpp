@@ -6,7 +6,7 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 17:47:21 by sameye            #+#    #+#             */
-/*   Updated: 2022/02/24 18:21:27 by sameye           ###   ########.fr       */
+/*   Updated: 2022/03/04 13:01:43 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,13 @@ int Span::longestSpan(void)
 	if (_vector.size() <= 1)
 		throw Span::NotEnoughElements();
 	return (*std::max_element(_vector.begin(), _vector.end()) - *std::min_element(_vector.begin(), _vector.end()));
+}
+
+const char *Span::StorageFull::what() const throw()
+{
+	return ("Out of memory");
+}
+const char *Span::NotEnoughElements::what() const throw()
+{
+	return ("Not enough elements");
 }

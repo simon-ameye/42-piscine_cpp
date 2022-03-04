@@ -6,7 +6,7 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 15:22:25 by sameye            #+#    #+#             */
-/*   Updated: 2022/02/10 15:47:19 by sameye           ###   ########.fr       */
+/*   Updated: 2022/03/04 12:53:12 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,4 +92,14 @@ std::ostream &operator<<(std::ostream &outputFile, Form const &i)
 	else
 		outputFile << "no";
 	return (outputFile);
+}
+
+const char* Form::GradeTooHighException::what() const throw()
+{
+	return ("form Exception : Grade too high");
+}
+
+const char* Form::GradeTooLowException::what() const throw()
+{
+	return ("form Exception : Grade too low");
 }

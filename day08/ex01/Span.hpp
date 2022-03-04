@@ -6,7 +6,7 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 17:47:19 by sameye            #+#    #+#             */
-/*   Updated: 2022/02/24 17:58:35 by sameye           ###   ########.fr       */
+/*   Updated: 2022/03/04 13:01:00 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,17 +43,11 @@ class Span
 	/**************** exception classes ****************/
 	class StorageFull : public std::exception
 	{
-		virtual const char *what() const throw()
-		{
-			return ("Out of memory");
-		}
+		virtual const char *what() const throw();
 	};
 	class NotEnoughElements : public std::exception
 	{
-		virtual const char *what() const throw()
-		{
-			return ("Not enough elements");
-		}
+		virtual const char *what() const throw();
 	};
 
 	private :
