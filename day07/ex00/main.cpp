@@ -13,6 +13,20 @@
 # include <iostream>
 # include "whatever.hpp"
 
+class Awesome
+{
+    public:
+    	Awesome( int n = 0 ) : _n( n ) {}
+    	bool operator==( Awesome const & rhs ) { return (this->_n == rhs._n); }
+    	bool operator!=( Awesome const & rhs ) { return (this->_n != rhs._n); }
+		bool operator>( Awesome const & rhs ) { return (this->_n > rhs._n); }
+    	bool operator<( Awesome const & rhs ) { return (this->_n < rhs._n); }
+    	bool operator>=( Awesome const & rhs ) { return (this->_n >= rhs._n); }
+    	bool operator<=( Awesome const & rhs ) { return (this->_n <= rhs._n); }
+	private:
+    	int _n;
+};
+
 int main( void )
 {
 	int a = 2;
