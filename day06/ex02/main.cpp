@@ -11,9 +11,9 @@
 /* ************************************************************************** */
 
 
-#include <iostream> //std::
-#include <cstdlib> //rand srand
-#include <unistd.h> //usleep
+#include <iostream>
+#include <cstdlib>
+#include <unistd.h>
 #include <ctime>
 
 class Base { public: virtual ~Base(void){}};
