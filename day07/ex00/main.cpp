@@ -6,26 +6,12 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 16:06:11 by sameye            #+#    #+#             */
-/*   Updated: 2022/02/22 16:24:12 by sameye           ###   ########.fr       */
+/*   Updated: 2022/03/11 16:47:00 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include <iostream>
 # include "whatever.hpp"
-
-class Awesome
-{
-    public:
-    	Awesome( int n = 0 ) : _n( n ) {}
-    	bool operator==( Awesome const & rhs ) { return (this->_n == rhs._n); }
-    	bool operator!=( Awesome const & rhs ) { return (this->_n != rhs._n); }
-		bool operator>( Awesome const & rhs ) { return (this->_n > rhs._n); }
-    	bool operator<( Awesome const & rhs ) { return (this->_n < rhs._n); }
-    	bool operator>=( Awesome const & rhs ) { return (this->_n >= rhs._n); }
-    	bool operator<=( Awesome const & rhs ) { return (this->_n <= rhs._n); }
-	private:
-    	int _n;
-};
 
 int main( void )
 {

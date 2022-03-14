@@ -6,7 +6,7 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 19:02:07 by sameye            #+#    #+#             */
-/*   Updated: 2022/02/23 16:39:46 by sameye           ###   ########.fr       */
+/*   Updated: 2022/03/14 13:52:36 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,17 @@
 #define ARRAY_HPP
 
 #include <exception>
+#include <iostream>
 
 template <typename T>
 class Array
 {
 	public :
 	/**************** Constructors & Destructors ****************/
-	Array(void) : _array(NULL), _n(0) {}
-	Array(unsigned int n) : _array(new T[n]), _n(n) {}
-	Array(const Array &copy)
+	Array(void) : _n(0), _array(new T[0]()) {}
+	Array(unsigned int n) : _n(n), _array(new T[n]()) {}
+	Array(const Array &copy) : _n(copy._n), _array(new T[_n]())
 	{
-		_n = copy._n;
-		_array = new T(_n);
 		for (unsigned int i = 0; i < _n; i++)
 		{
 			_array[i] = copy._array[i];
@@ -39,10 +38,10 @@ class Array
 	/**************** Operators overload ****************/
 	Array &operator=(const Array &rhs)
 	{
-		if (_n != 0)
-			delete _array;
+		if (_array != NULL)
+			delete [] _array;
 		_n = rhs._n;
-		_array = new T(_n);
+		_array = new T[_n];
 		for (unsigned int i = 0; i < _n; i++)
 		{
 			_array[i] = rhs._array[i];
@@ -74,7 +73,7 @@ class Array
 	}
 
 	private :
-	T *_array;
 	unsigned int _n;
+	T *_array;
 };
 #endif
