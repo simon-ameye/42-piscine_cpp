@@ -6,7 +6,7 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 19:02:05 by sameye            #+#    #+#             */
-/*   Updated: 2022/03/14 13:55:35 by sameye           ###   ########.fr       */
+/*   Updated: 2022/03/14 14:02:20 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,9 @@ void print_array(T &array, unsigned int n)
 
 int	main(void)
 {
+	std::cout << "\n************test with empty array : ************" << std::endl;
+	Array <int>test0(void);
+
 	std::cout << "\n************test with int : ************" << std::endl;
 	Array <int>test(42);
 
